@@ -1,13 +1,13 @@
 'use strict';
 
 var meeting;
-var host = 'video-coffe.herokuapp.com'; // HOST_ADDRESS gets injected into room.ejs from the server side when it is rendered
+var host = 'socket-ioserver.herokuapp.com'; // HOST_ADDRESS gets injected into room.ejs from the server side when it is rendered
 
 $(document).ready(function () {
 	/////////////////////////////////
 	// CREATE MEETING
 	/////////////////////////////////
-	meeting = new Meeting('video-coffe.herokuapp.com');
+	meeting = new Meeting('socket-ioserver.herokuapp.com');
 
 	meeting.onLocalVideo(function (stream) {
 		document.querySelector('#localVideo').srcObject = stream;
