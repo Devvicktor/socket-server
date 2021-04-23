@@ -8,7 +8,7 @@ $( document ).ready(function() {
 }); // end of document.ready
 
 /**
- * Generates a random string of length 6. Example: qyvf2x 
+ * Generates a random string of length 6. Example: qyvf2x
  *
  * We need this for the room URL (e.g. http://www.foobubble.com/room/qyvf2x)
  *
@@ -25,7 +25,7 @@ function shortUrl() {
 function generateRoomUrl() {
     var room = shortUrl();
 	var link = document.getElementById("room-url");
-	roomUrl =  'http://'+window.location.host+'/'+room;
+	roomUrl =  'https://'+window.location.host+'/'+room;
 	link.href = roomUrl;
 	link.innerHTML = roomUrl;
 }
