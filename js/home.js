@@ -25,7 +25,7 @@ function shortUrl() {
 function generateRoomUrl() {
     var room = shortUrl();
 	var link = document.getElementById("room-url");
-	roomUrl =  'http://'+window.location.host+'/'+room;
+	roomUrl =  'http://'+window.location.hostname+'/'+room;
 	link.href = roomUrl;
 	link.innerHTML = roomUrl;
 }
