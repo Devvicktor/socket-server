@@ -28,7 +28,7 @@ var Meeting = function (socketioHost) {
     var _opc = {};
     var _apc = {};
     var _sendChannel = {};
-    var _room;
+    // var _room;
     var _myID;
     var _onRemoteVideoCallback;
     var _onLocalVideoCallback;
@@ -37,6 +37,11 @@ var Meeting = function (socketioHost) {
     var _onChatNotReadyCallback;
     var _onParticipantHangupCallback;
     var _host = socketioHost;
+    // Get username and room from URL
+const { username,room } = Qs.parse(location.search, {
+    ignoreQueryPrefix: true,
+  });
+
 
     ////////////////////////////////////////////////
     // PUBLIC FUNCTIONS
@@ -48,17 +53,17 @@ var Meeting = function (socketioHost) {
   * @param name of the room to join
   */
     function joinRoom(name) {
-        _room = name;
+        let room = name;
 
-        _myID = generateID();
+        _myID = username;
         console.log('Generated ID: ' + _myID);
 
         // Open up a default communication channel
         initDefaultChannel();
 
-        if (_room !== '') {
-            console.log('Create or join room', _room);
-            _defaultChannel.emit('create or join', { room: _room, from: _myID });
+        if (room !== '') {
+            console.log('Create or join room', room);
+            _defaultChannel.emit('create or join', { room: room, from: _myID });
         }
 
         // Open up a private communication channel
@@ -316,6 +321,7 @@ var Meeting = function (socketioHost) {
 	 *
 	 * @return the socket
 	 */
+    //  const socket = io.connect('http://mywebsite.com:12345');
     function openSignalingChannel(channel) {
         var namespace = _host + '/' + channel;
         console.log('Opening private channel:' + namespace);
