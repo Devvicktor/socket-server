@@ -52,8 +52,8 @@ const { username,room } = Qs.parse(location.search, {
   *
   * @param name of the room to join
   */
-    function joinRoom(name) {
-        room = name;
+    function joinRoom() {
+
 
         _myID = username;
         console.log('Generated ID: ' + _myID);
