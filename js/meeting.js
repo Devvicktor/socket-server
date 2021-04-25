@@ -325,7 +325,7 @@ const { username,room } = Qs.parse(location.search, {
 	 */
     //  const socket = io.connect('http://mywebsite.com:12345');
     function openSignalingChannel(channel) {
-        var namespace = 'https://socket-ioserver.herokuapp.com/ '
+        var namespace = 'wss://socket-ioserver.herokuapp.com/ '
         console.log('Opening private channel:' + namespace);
         var sckt = io.connect(namespace, { 'forceNew': true, 'transports': ['websocket'] });
         return sckt;
