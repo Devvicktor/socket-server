@@ -28,7 +28,7 @@ var Meeting = function (socketioHost) {
     var _opc = {};
     var _apc = {};
     var _sendChannel = {};
-    // var _room;
+    var _room;
     var _myID;
     var _onRemoteVideoCallback;
     var _onLocalVideoCallback;
@@ -55,15 +55,17 @@ const { username,room } = Qs.parse(location.search, {
     function joinRoom() {
 
 
+        _room = room;
+
         _myID = username;
         console.log('Generated ID: ' + _myID);
 
         // Open up a default communication channel
         initDefaultChannel();
 
-        if (room !== '') {
-            console.log('Create or join room', room);
-            _defaultChannel.emit('create or join', { room: room, from: _myID });
+        if (_room !== '') {
+            console.log('Create or join room', _room);
+            _defaultChannel.emit('create or join', { room: _room, from: _myID });
         }
 
         // Open up a private communication channel
