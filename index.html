@@ -1,50 +1,45 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-		<meta name='keywords' content='WebRTC, HTML5, JavaScript' />
-		<meta name='description' content='WebRTC Video Conference App' />
-		<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1'>
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-		<script src="https://socket-ioserver.herokuapp.com"></script>
-		<!-- <script src='/js/home.js'></script> -->
-		<link rel="stylesheet" type="text/css" href="./css/home.css" media="screen" />
-		<title>WebRTC Video Conference App Example With Multiple peers</title>
-	</head>
-	<body>
-        <main >
-			<div class="join-container">
-				<header class="join-header">
-					<h1><i class="fas fa-smile"></i> ZetiAlpha</h1>
-				</header>
-				<main class="join-main">
-					<form action="room.html">
-						<div class="form-control">
-							<label for="username">Username</label>
-							<input
-								type="text"
-								name="username"
-								id="username"
-								placeholder="Enter username..."
-								required
-							/>
-						</div>
-						<div class="form-control">
-							<label for="room">Room</label>
-							<input
-								type="text"
-								name="room"
-								id="room"
-								placeholder="Enter room to join..."
-								required
-							/>
-						</div>
-						<button type="submit" class="btn">Join Room</button>
-					</form>
-				</main>
-			</div>
-	    	</section>
 
-        </main>
-	</body>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name='keywords' content='WebRTC, HTML5, JavaScript' />
+	<meta name='description' content='WebRTC Video Conference App' />
+	<meta name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1'>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+	<script src="https://socket-ioserver.herokuapp.com"></script>
+	<script src="https://cdn.socket.io/4.0.1/socket.io.min.js"
+		integrity="sha384-LzhRnpGmQP+lOvWruF/lgkcqD+WDVt9fU3H4BWmwP5u5LTmkUGafMcpZKNObVMLU" crossorigin="anonymous">
+	</script>
+
+	<!-- <script src='/js/home.js'></script> -->
+	<link rel="stylesheet" type="text/css" href="./css/home.css" media="screen" />
+	<title>WebRTC Video Conference App Example With Multiple peers</title>
+</head>
+
+<body>
+	<main>
+		<div class="join-container">
+			<header class="join-header">
+				<h1><i class="fas fa-smile"></i> ZetiAlpha</h1>
+			</header>
+			<main class="join-main">
+				<form action="room.html">
+					<div class="form-control">
+						<label for="username">Username</label>
+						<input type="text" name="username" id="username" placeholder="Enter username..." required />
+					</div>
+					<div class="form-control">
+						<label for="room">Room</label>
+						<input type="text" name="room" id="room" placeholder="Enter room to join..." required />
+					</div>
+					<button type="submit" class="btn">Join Room</button>
+				</form>
+			</main>
+		</div>
+		</section>
+
+	</main>
+</body>
+
 </html>
